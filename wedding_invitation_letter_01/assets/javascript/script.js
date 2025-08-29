@@ -55,15 +55,32 @@ document.getElementById("kirim-ucapan").addEventListener("click", function (){
 setInterval(createFlower, 500);
 
 // add music to scroll
-const musik = document.getElementById("music");
-  let musikSudahDimainkan = false; // supaya cuma dimainkan sekali
+// const musik = document.getElementById("music");
+//   let musikSudahDimainkan = false; // supaya cuma dimainkan sekali
 
-  window.addEventListener("scroll", () => {
-    if (!musikSudahDimainkan) {
-      musik.play().catch(() => {
-        console.log("Browser butuh interaksi user sebelum play musik.");
-      });
-      musikSudahDimainkan = true;
-    }
+//   window.addEventListener("scroll", () => {
+//     if (!musikSudahDimainkan) {
+//       musik.play().catch(() => {
+//         console.log("Browser butuh interaksi user sebelum play musik.");
+//       });
+//       musikSudahDimainkan = true;
+//     }
+//   });
+const musik = document.getElementById("music");
+const overlay = document.getElementById("overlay");
+
+function startMusic() {
+  musik.play().catch(() => {
+    console.log("Browser mobile butuh interaksi user.");
   });
+  overlay.style.display = "none"; // sembunyikan overlay
+}
+
+// klik/tap overlay (seluruh layar)
+overlay.addEventListener("click", startMusic);
+
+// scroll atau touch pertama juga bisa trigger
+window.addEventListener("scroll", startMusic, { once: true });
+window.addEventListener("touchstart", startMusic, { once: true });
+
 

@@ -144,3 +144,17 @@
   }
 }
 
+
+/* music button */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent; /* bisa dikasih blur/transparan */
+  z-index: 9999;
+  cursor: pointer;
+}
+
+
