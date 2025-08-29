@@ -1,25 +1,146 @@
  body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-      background: #fef9f6;
-      color: #333;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+   font-family: 'Great Vibes', cursive;
+   margin: 0;
+   padding: 0;
+   text-align: center;
+   background: #fef9f6;
+   color: #333;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
 
-.undangan {
-  width: 100%;         /* full lebar layar hp */
-  max-width: 420px;    /* batas maksimal (biar gak kepanjangan di layar besar) */
-  height: auto;        /* otomatis sesuai rasio gambar */
-  margin: 0 auto;      /* biar ketengah kalau di layar lebih lebar */
+ .undangan {
+   width: 100%;
+   /* full lebar layar hp */
+   max-width: 420px;
+   /* batas maksimal (biar gak kepanjangan di layar besar) */
+   height: auto;
+   /* otomatis sesuai rasio gambar */
+   margin: 0 auto;
+   /* biar ketengah kalau di layar lebih lebar */
+   position: relative;
+   overflow: hidden;
+ }
+
+ .undangan img {
+   width: 100%;
+   /* gambar ikuti lebar container */
+   height: auto;
+   /* tinggi otomatis */
+   display: block;
+ }
+
+ .undangan h1 {
+   position: absolute;
+   top: 120px;
+   /* jarak dari atas */
+   left: 50%;
+   /* tengah horizontal */
+   transform: translateX(-50%);
+   /* bener-bener rata tengah */
+   color: #2b3f77;
+   font-size: 25px;
+ }
+
+ .undangan .doa {
+  font-family: 'Montserrat', sans-serif;
+   padding: 25px;
+   position: absolute;
+   top: 150px;
+   color: #2b3f77;
+   font-size: 15px;
+   font-weight: 550;
+ }
+
+ .undangan h2 {
+  font-family: 'Montserrat', sans-serif;
+   position: absolute;
+   top: 280px;
+   color: #2b3f77;
+   left: 50%;
+   /* tengah horizontal */
+   transform: translateX(-50%);
+   /* bener-bener rata tengah */
+   font-size: 15px;
+ }
+
+ .undangan .konfirmation-text {
+  font-family: 'Montserrat', sans-serif;
+   padding: 25px;
+   position: absolute;
+   top: 290px;
+   color: #2b3f77;
+   font-size: 15px;
+   font-weight: 550;
+ }
+
+ .undangan button {
+  font-family: 'Montserrat', sans-serif;
+   padding: 10px 20px 10px 20px;
+   left: 50%;
+   transform: translateX(-50%);
+   position: absolute;
+   top: 390px;
+   color: #2b3f77;
+   font-size: 15px;
+   font-weight: 550;
+   background-color: #b7cbde;
+   border: none;
+   border-radius: 20px;
+  transition: all 0.3s ease;
+ }
+
+ .undangan button:hover{
+   color: #ffffff;
+   background-color: #2b3f77;
+ }
+
+ .undangan span{
+   font-family: 'Montserrat', sans-serif;
+   left: 50%;
+   transform: translateX(-50%);
+   position: absolute;
+   top: 460px;
+   color: #2b3f77;
+   font-size: 15px;
+   font-weight: 550;
+ }
+
+ .undangan .date{
+   font-family: 'Montserrat', sans-serif;
+   left: 50%;
+   transform: translateX(-50%);
+   position: absolute;
+   top: 470px;
+   color: #2b3f77;
+   font-size: 15px;
+   font-weight: 550;
+ }
+
+ /* flower efect */
+ .falling-flowers {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* biar gak ganggu klik tombol */
   overflow: hidden;
+  z-index: 9999; /* selalu di atas */
 }
 
-.undangan img {
-  width: 100%;   /* gambar ikuti lebar container */
-  height: auto;  /* tinggi otomatis */
-  display: block;
+.flower {
+  position: absolute;
+  top: -50px;
+  font-size: 24px; /* besar kecil bunga */
+  animation: fall linear forwards;
 }
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0.7;
+  }
+}
+
