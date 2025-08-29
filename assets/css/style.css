@@ -1,0 +1,25 @@
+ body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background: #fef9f6;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+.undangan {
+  width: 100%;         /* full lebar layar hp */
+  max-width: 420px;    /* batas maksimal (biar gak kepanjangan di layar besar) */
+  height: auto;        /* otomatis sesuai rasio gambar */
+  margin: 0 auto;      /* biar ketengah kalau di layar lebih lebar */
+  overflow: hidden;
+}
+
+.undangan img {
+  width: 100%;   /* gambar ikuti lebar container */
+  height: auto;  /* tinggi otomatis */
+  display: block;
+}
