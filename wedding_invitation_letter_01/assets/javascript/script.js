@@ -54,3 +54,16 @@ document.getElementById("kirim-ucapan").addEventListener("click", function (){
 
 setInterval(createFlower, 500);
 
+// add music to scroll
+const musik = document.getElementById("music");
+  let musikSudahDimainkan = false; // supaya cuma dimainkan sekali
+
+  window.addEventListener("scroll", () => {
+    if (!musikSudahDimainkan) {
+      musik.play().catch(() => {
+        console.log("Browser butuh interaksi user sebelum play musik.");
+      });
+      musikSudahDimainkan = true;
+    }
+  });
+
